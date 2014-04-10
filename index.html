@@ -7,8 +7,6 @@
 	<link href="./css/style.css" rel="stylesheet" type="text/css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="./css/custom.css" rel="stylesheet" type="text/css">
 
     <!-- JavaScript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -17,52 +15,22 @@
     <script src="./page_files/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./page_files/bootstrap.min.js"></script>
+
+    <script src="Test.json"></script>
+
     <script>
 
     	$(document).ready(function(){
-            $.get('./xml/nav.xml', function(links){
-                $(links).find('nav_item').each(function(){
 
-                    var $nav_item = $(this);
-                    var title = $nav_item.find('title').text();
-                    var url = $nav_item.find('url').text();
-
-                    var nav_list = document.createElement('li');
-                    
-
-                    var nav_link = document.createElement('a');
-                    $(nav_link).addClass('active');
-                    $(nav_link).attr("href", url);
-                    $(nav_link).text(title);
-                    $(nav_list).append($(nav_link));
-
-                    $("ul.nav.navbar-nav").append(nav_list);
-
-
-
-                });
-
-            }).fail(function(){alert("Yo");});
-        
-             $.get('./json/shredcast.json', function(getter){
-
-                        $(getter).find('mountain').each(function(){
-
-                        	//Main Mountain Information
-                            var $mountain = $(this);
-                            var name = $mountain.find('name').text();
-                            var imageurl = $mountain.find('url').text();
-                            var state = $mountain.find('state');
-                            var city = $mountain.find('city');
-                            var ShredCastScore = $mountain.find('score');
-
-                            // Conditions
-                            var temperature += $mountain.find('temperature').append("Temperature:");
-                            var base = $mountain.find('base');
-                            var windSpeed = $mountain.find('windSpeed');
-
-
-
+				$(mount.mountain).each(function() {
+					var name = this.name;
+					var temperature = this.temp;
+					var cityState = this.state;
+					var windSpeed = this.windspeed;
+					var base = this.snow;
+					var ShredCastScore = 80;
+				//	var output = "<div class='holder'> <div class='description'> <div class='name'>"  + name + " </div><br><div class='state'>"+ state + " </div><br><div class='windspeed'>"+ windspeed + " </div><br><div class='temp'>"+ temp + " </div><br><div class='snow'>"+ snow +  "</div></div></div>" + "<br>" ;
+					//"<ul><li>" + this.firstName + " " + this.lastName + "--" + this.joined.month+"</li></ul>";
 
 
                             var mountain_panel = document.createElement('div');
@@ -80,7 +48,7 @@
                             		$(name_col).append('name_row')
 
                             			var name_text = document.createElement('h1');
-                            			$(name_text).text(title);
+                            			$(name_text).append(name);
                             			$(name_text).append(name_col);
 
                             		var cityState = document.createElement('div');
@@ -109,7 +77,7 @@
                             			$(score_text).addClass('clear-margins')
                             			$(score_text).addClass('nokern')
                             			$(score_text).addClass('centered')
-                            			$(score_text).text(ShredCastScore);
+                            			$(score_text).append(ShredCastScore);
                             			$(score_text).append('score_container');
 
 
@@ -133,17 +101,17 @@
                             					// TEMPERATURE
                             					var list_temperature = document.createElement('li');
                             					$(list_temperature).append('condtions_list1');
-                            					$(list_temperature).text(temperature);
+                            					$(list_temperature).append(temperature);
 
                             					// BASE INCHES
                             					var list_base = document.createElement('li');
                             					$(list_base).append('condtions_list1');
-                            					$(list_base).text(base); 
+                            					$(list_base).append(base); 
 
                             					// WIND SPEED
                             					var list_windSpeed = document.createElement('li');
                             					$(list_windSpeed).append('condtions_list1'); 
-                            					$(list_windSpeed).text(windSpeed);
+                            					$(list_windSpeed).append(windSpeed);
 
 
                             			// 2nd coloumn in the rankings row	
@@ -160,26 +128,24 @@
                             					// SOMETHING
                             					var list_temperature = document.createElement('li');
                             					$(list_temperature).append('condtions_list2');
-                            					$(list_temperature).text(temperature);
+                            					$(list_temperature).append(temperature);
 
                             					// SOMETHING
                             					var list_base = document.createElement('li');
                             					$(list_base).append('condtions_list2');
-                            					$(list_base).text(base); 
+                            					$(list_base).append(base); 
 
                             					// SOMETHING
                             					var list_windSpeed = document.createElement('li');
                             					$(list_windSpeed).append('condtions_list2'); 
-                            					$(list_windSpeed).text(windSpeed);
+                            					$(list_windSpeed).append(windSpeed);
 
 
-                            $('body').append($(mountain_panel);
+                            $('body').append(mountain_panel);
 
                         });
 
                     });
-
-        }); 
         </script> 
 
 
