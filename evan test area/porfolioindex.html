@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+<style>
+a.test {
+    color: green;
+}
+</style>
+<script type="text/javascript" src="jquery/jquery code .js"></script>
+<script type="text/javascscript" src="file:///C|/Users/Evan/Documents/evan/College/sophmore/Second Semester/Programming for digital media/porfolio xml project/Javaloadxml.js"></script>
+<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="porfoliostyle.css">
+<meta charset="utf-8">
+<title>Home</title>
+</head>
+
+<body>
+<script>
+
+//
+$(document).ready(function()
+{   //Loads initial xml
+	$.get('content.xml', function( d ){
+			
+			
+			
+			
+			
+			
+     
+//--------------------Porfolio display-----------------
+
+	//displays each xml holder function
+$(d).find('holder').each(function(){
+
+           //grabs each type decription, title, image url and then creates a div holder a
+            var $holder = $(this); 
+			var design = $holder.find('design').text();
+			var recent = $holder.find('recent').text();
+			var photo = $holder.find('photo').text();
+			var art = $holder.find('art').text();
+			var bigimg = $holder.find('imgbig').text;
+            var title = $holder.find('title').text();
+            var description = $holder.find('description').text();
+            var imageurl = $holder.find('imgthumb').text();
+            var html2 = '<div class="holder '+recent+' '+photo+' '+design+' '+art+'" > <img alt="" src="' + imageurl + '"/><h1 class="description hidden">'+title+'<div>'+description+'</div></h1> </div>';
+             //
+
+           // html += '<p class="title">' + title + '</p>';
+            //html += '<p> ' + description + '</p>' ;
+            //html += '</dt>';
+			
+			//Shows each image 			
+           $(".content").append($(html2));
+		
+		   $(".holder").click(function () {
+			   
+			   //alert(this);
+			    $(this).removeClass("uptop");
+			    $(this).addClass("uptop");
+				
+				//$(this).togggleClass("holder");
+			    $(this).children().addClass('hidden');
+                $(this).children().removeClass('hidden');
+				
+});
+		   
+        });
+//         -----------------Responsive Nav--------------------		
+		// Shows buttons 
+	$(d).find('filter').each(function(){
+		//the category is recorded in HTML in the rel of the button
+		var $filter = $(this);
+		var words = $filter.find('name').text();
+		var button = '<button class="button-link" id="'+words+'">'+words+'</button>';
+		//var buttonclick = document.getElementById(words);
+		
+		
+		//adds buttons
+		$(".subnav").append(button);
+		
+		//adds filter function to button
+		
+		
+		//Removes all class selection so the current one can be used
+		function removeclassselected(){
+			$("#Art").removeClass("selected");
+			$("#All").removeClass("selected");
+			$("#Design").removeClass("selected");
+			$("#Photo").removeClass("selected");
+			$("#Recent").removeClass("selected");
+			};	
+		
+		//Removes all classes
+				
+		// All
+		$("#All").click(function(event){
+			//alert("hello");
+			$(".recent").removeClass( "hidden" );
+			$(".art").removeClass( "hidden" );
+			$(".design").removeClass( "hidden" );
+			$(".photo").removeClass( "hidden" );
+			
+			removeclassselected();
+			$("#All").addClass("selected");
+			
+			
+			});
+	    //Recent
+		$("#Recent").click(function(event){
+			//alert("hello");
+			$(".holder").not(".recent").addClass( "hidden" );
+			$(".recent").removeClass( "hidden" );
+			
+			removeclassselected();
+			$("#Recent").addClass("selected");
+			});
+		//Design
+		$("#Design").click(function(event){
+			//alert("hello");
+			$(".holder").not(".design").addClass( "hidden" );
+			$(".design").removeClass( "hidden" );
+			
+		    removeclassselected();
+			$("#Design").addClass("selected");
+			
+			});
+			
+		$("#Art").click(function(event){
+			//alert("hello");
+			$(".holder").not(".art").addClass( "hidden" );		
+			$(".art").removeClass( "hidden" );	
+			
+			removeclassselected();
+			$("#Art").addClass("selected");
+			
+			});
+			
+		//Photo	
+		$("#Photo").click(function(event){
+			//alert("hello");
+			$(".holder").not(".photo").addClass( "hidden" );		
+			$(".photo").removeClass( "hidden" );
+			
+		    removeclassselected();
+			$("#Photo").addClass("selected");
+		
+		});
+		
+		
+    });
+	
+	// Displaying individual pieces
+	
+
+   });
+});
+
+
+
+
+
+
+    </script>
+  
+<div class="page">
+  <div class="topper"></div>
+  <div class="header"></div>
+  <div class="space"></div>
+  <div class="nav-center">
+    <ul class="nav">
+      <li><a href="porfolioindex.html" id="current" class="goleft">Home</a></li>
+      <li><a href="porfolioproject.html" class="goleft">Projects</a>
+        <ul>
+          <li><a href="Art.html">Art</a></li>
+          <li><a href="Posters.html">Posters</a></li>
+          <li><a href="Design.html">Design</a></li>
+          <li><a href="Photo.html">Photo</a></li>
+        </ul>
+      </li>
+      <li><a href="porfolioabout.html"class="goleft">About</a></li>
+      <li><a href="porfoliocontact.html"class="goleft">Contact</a></li>
+    </ul>
+  </div>
+  <div class="subnav">
+  	</div>
+  <div class="body-center">
+    <div class="bodycontent">
+     <div class="content">
+     <article></article>
+     <!-- 
+       
+      
+      
+       <div class="holder"> <a href="Images/canidates final-09.jpg" rel="exit"  class="fancybox" title="I went through many different designers and colors to come up with my final design."> <img src="Images/noexit200.jpg"> </a> </div> 
+        
+        <div class="holder"> <a href="Images/700Tulip.jpg" class="fancybox" rel="tulip" title="A poster on the Tulip Chair for my History of Graphic Design Class"> <img src="Images/200Tulip.jpg" > </a> </div>
+        
+         
+        <div class="holder"> <a href="Images/knife700.jpg" rel="" class="fancybox" title="A how to I did for my Graphic Design Class on how to use a pocket knife."> <img src="Images/knife200.jpg"> </a> </div>
+         
+       <div class="holder"> <a href="Images/tri 700.jpg" rel="drawing" class="fancybox" title="Part of a black and white 2D collection of imags focusing on creating 3D illusions"> <img src="Images/tri 200.jpg"> </a> </div>
+       
+         <div class="holder"> <a href="Images/700dorian.jpg"  rel="dorian" class="fancybox" title="The book cover I did for my Typography class. I went through a few different options but I think<br/> this shows the split between his outward appearance and the disintigration of his soul."> <img src="Images/200dorian.jpg"> </a> </div>
+        
+        <div class="holder"> <a href="Images/Photos/Imprint-01.jpg" class="fancybox" rel="Fingers"   title=""> <img src="Images/Photos/200upclosemiddle.jpg"> </a> </div>
+     
+       <div class="holder"> <a href="Images/midnight madness2 700.jpg" rel="midnight"  class="fancybox" title="The logo I created for one of Northeastern Tennis Team's annual charity event."> <img src="Images/midnight madness2 200.jpg"> </a> </div> 
+         
+       
+       <div class="holder"> <a href="Images/DUDE Securty-01 700.jpg"  class="fancybox" title="This is a logo design I came up with for a company called Dude Security"> <img src="Images/dude 200.jpg"> </a> </div>
+      
+        
+      <div class="holder"> <a class="various fancybox.iframe" title="A short film I acted, produced, and directed that came in the top 16 of 128 entries in the Campus MovieFest Contest" href="http://www.youtube.com/embed/Gy4VeASs4G0"> <img src="Images/Vagabond.jpg"> </a> </div>
+      
+        
+    
+     <!--HIDDEN PEICES
+      <div class="hidden"> 
+        
+       <div class="holder"> <a href="Images/500Tulip.jpg" class="fancybox" rel="tulip" title="A poster on the Tulip Chair for my History of Graphic Design Class"> <img src="Images/200Tulip.jpg" > </a> </div>
+       <div class="holder"> <a href="Images/500Tulip2.jpg" class="fancybox" rel="tulip" title="A poster on the Tulip Chair for my History of Graphic Design Class"> <img src="Images/200Tulip.jpg" > </a> </div>
+        
+       <div class="holder"> <a href="Images/dorain grey-09.jpg" rel="dorian"  class="fancybox" title="The book cover I did for my Typography class. I went through a few different options but I think<br/> this shows the split between his outward appearance and the disintigration of his soul."> <img src="Images/200dorian.jpg"> </a> </div>
+        
+         
+        
+      
+            <div class="holder"> <a href="Images/Photos/panoramaoffinger.jpg" class="fancybox" rel="Fingers" title=""> <img src="Images/Photos/.jpg"> </a> </div>
+        <div class="holder"> <a href="Images/Photos/700fingerpaintupset.jpg" class="fancybox" rel="Fingers" title=""> <img src="Images/Photos/200fingerpaintupset.jpg"> </a> </div>
+        <div class="holder"> <a href="Images/Photos/700middle.jpg" class="fancybox" rel="Fingers" title=""> <img src="Images/Photos/200middle.jpg"> </a> </div>
+        <div class="holder"> <a href="Images/Photos/700fingerpaintanger.jpg" class="fancybox" rel="Fingers" title=""> <img src="Images/Photos/200fingerpaintanger.jpg"> </a> </div>
+        <div class="holder"> <a href="Images/Photos/700fingerpaintsad.jpg" class="fancybox" rel="Fingers" title=""> <img src="Images/Photos/.jpg"> </a> </div>
+        <div class="holder"> <a href="Images/Photos/700fingerpaintupset.jpg" class="fancybox" rel="Fingers" title=""> <img src="Images/Photos/.jpg"> </a> </div>
+    >
+        <div class="holder"> <a href="Images/circle 700.jpg" rel="drawing" class="fancybox"  title="TPart of a black and white 2D collection of images focusing on creating 3D illusions"> <img src="Images/circle 200.jpg"> </a> </div>
+        <div class="holder"> <a href="Images/final person 700.jpg" rel="drawing" class="fancybox"title="Part of a black and white 2D collection of images focusing on creating 3D illusions"> <img src="Images/final person 200.jpg"> </a> </div>
+      
+        <div class="holder"> <a href="Images/1-700.jpg" class="fancybox" rel="drawing" title="This is a fun series drawing I did for one my classes that focused on curves"> <img src="Images/1-200x300.jpg"> </a> </div>
+     
+        <div class="holder"> <a href="Images/700drawing.jpg" rel="drawing" class="fancybox"title="Part of a black and white 2D collection of images focusing on creating 3D illusions"> <img src="Images/200drawing.jpg"> </a> </div>
+         
+        
+       
+     
+      </div>
+-->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer">
+     <a href="mailto:evanmac123@gmail.com"><img src="Images/Minimalistica Red-mail-icon-png/32x32/mail.png">Email</a>
+    
+     <a href="resume.2.253.jpg" target="_blank" ><img src="Images/Minimalistica Red-page_full-icon-png/32x32/page_full.png">Resume</a>
+     
+     
+
+</div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<porfolio>
+
+
+
+<navigation style="subnav">
+<button style="filterbuttons">
+<filter><name>All</name></filter>
+<filter><name>Recent</name></filter> 
+<filter><name>Design</name></filter>
+<filter><name>Art</name></filter>
+<filter><name>Photo</name></filter>
+
+</button>
+</navigation>
+
+
+
+<content style="container">
+<holder>
+<design>design</design>
+<recent>recent</recent>
+<link></link>
+<title>No Exit</title>
+<imgbig>Images/canidates final-09.jpg</imgbig>
+<imgthumb>Images/noexit200.jpg</imgthumb>
+<description>I went through many different designers and colors to come up with my final design.</description>
+</holder>
+
+<holder>
+<design>design</design>
+<recent>recent</recent>
+<link></link>
+<title>Tulip Chair</title>
+<imgbig>Images/700Tulip.jpg</imgbig>
+<imgthumb>Images/200Tulip.jpg</imgthumb>
+<description>A poster on the Tulip Chair by Eero Saarinen for my History of Graphic Design Class</description>
+</holder>
+
+<holder>
+<photo>photo</photo>
+<link></link>
+<title>Street</title>
+<imgbig>Images/Photos/700street.jpg</imgbig>
+<imgthumb>Images/Photos/200street.jpg</imgthumb>
+<description></description>
+</holder>
+
+<holder>
+<design>design</design>
+<recent>recent</recent>
+<link></link>
+<title>Visual Instructive Guide </title>
+<imgbig>Images/knife700.jpg</imgbig>
+<imgthumb>Images/knife200.jpg</imgthumb>
+<description>A visual instructive guide I did for my Graphic Design Class on how to use a pocket knife.</description>
+</holder>
+
+<holder>
+<art>art</art>
+<recent>recent</recent>
+<link></link>
+<title>Transformations</title>
+<imgbig>Images/tri 700.jpg</imgbig>
+<imgthumb>Images/tri 200.jpg</imgthumb>
+<description>Part of a black and white 2D collection of images focusing on creating 3D illusions</description>
+</holder>
+
+<holder>
+<design>design</design>
+
+<link></link>
+<title>Dude Security</title>
+<imgbig>Images/DUDE Securty-01 700.jpg</imgbig>
+<imgthumb>Images/dude 200.jpg</imgthumb>
+<description>This is a logo design I came up with for a company called Dude Security</description>
+</holder>
+
+<holder>
+
+<design>design</design>
+<recent>recent</recent>
+<link></link>
+<title>Dorian Grey</title>
+<imgbig>Images/700dorian.jpg</imgbig>
+<imgthumb>Images/200dorian.jpg</imgthumb>
+<description>The book cover I did for my Typography class. I went through a few different options but I think<br/> this shows the split between his outward appearance and the disintigration of his soul.</description>
+</holder>
+
+<holder>
+<photo>photo</photo>
+<link></link>
+<title>Reaching </title>
+<imgbig>Images/Photos/reaching700.jpg</imgbig>
+<imgthumb>Images/Photos/reaching200.jpg</imgthumb>
+<description></description>
+</holder>
+
+<holder>
+<design>design</design>
+
+<link></link>
+<title> Midnight Madness</title>
+<imgbig>Images/midnight madness2 700.jpg</imgbig>
+<imgthumb>Images/midnight madness2 200.jpg</imgthumb>
+<description>The logo I created for one of Northeastern Tennis Team's annual charity event.</description>
+</holder>
+
+<holder>
+<other></other>
+<link>http://www.youtube.com/embed/Gy4VeASs4G0</link>
+<title>Vagabond</title>
+<imgbig>Images/Vagabond.jpg</imgbig>
+<imgthumb>Images/Vagabond.jpg</imgthumb>
+<description>A short film I acted, produced, and directed that came in the top 16 of 128 entries in the Campus MovieFest Contest</description>
+</holder>
+
+<holder>
+<art>art</art>
+<recent>recent</recent>
+<link></link>
+<title>Fingers</title>
+<imgbig>Images/Photos/Imprint-01.jpg</imgbig>
+<imgthumb>Images/Photos/200upclosemiddle.jpg</imgthumb>
+<description></description>
+</holder>
+
+
+
+<holder>
+<photo>photo</photo>
+<link></link>
+<title>The Bears</title>
+<imgbig>Images/Photos/bear700.jpg</imgbig>
+<imgthumb>Images/Photos/bear200.jpg</imgthumb>
+<description></description>
+</holder>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<holder>
+<type></type>
+<link></link>
+<title></title>
+<imgbig></imgbig>
+<imgthumb></imgthumb>
+<description></description>
+</holder>
+-->
+</content>
+</porfolio>

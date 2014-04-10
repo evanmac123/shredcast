@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Test</title>
+
+<script type="text/javascript" src="jquery/jquery code .js"></script>
+<script type="text/javascscript" src="../../../evan/College/sophmore/Second Semester/Programming for digital media/porfolio xml project/Javaloadxml.js"></script>
+
+<script src="Test.json"></script>
+<link rel="stylesheet" type="text/css" href="porfoliostyle.css">
+</head>
+
+
+
+
+
+
+<body>
+
+
+
+<!--<form action="run">
+
+
+its a box <input type="checkbox" > <br>
+<br>
+<input type="submit" value="Enter"> hello
+
+</form>-->
+
+
+	<div id="placeholder"></div>
+
+	<button class="btn1"> something </button> 
+	<button class="btn2"> this one </button> 
+
+
+<script>
+$(document).ready(function()
+{  
+
+$(mount.mountain).each(function() {
+	var name = this.name;
+	var temp = this.temp;
+	var state = this.state;
+	var windspeed = this.windspeed;
+	var snow = this.snow;
+	
+	var output = "<div class='holder'> <div class='description'> <div class='name'>"  + name + " </div><br><div class='state'>"+ state + " </div><br><div class='windspeed'>"+ windspeed + " </div><br><div class='temp'>"+ temp + " </div><br><div class='snow'>"+ snow +  "</div></div></div>" + "<br>" ;
+	//"<ul><li>" + this.firstName + " " + this.lastName + "--" + this.joined.month+"</li></ul>";
+	
+    $('#placeholder').append(output);
+
+    $(".btn2").click(function(){
+      if(".windspeed:contains('8')"){
+       $(".holder").addClass("hidden");
+       alert(2);
+    }
+    });
+
+
+
+
+	$(".btn1").click(function(){
+        $(".holder").slideUp();
+
+	});
+	
+
+});
+
+
+			
+});			
+
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+

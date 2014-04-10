@@ -1,0 +1,55 @@
+// JavaScript Document
+
+
+
+
+
+var mount= {"mountain":[ 
+	{"name":"Loon Mountain" , 
+	"state":"NH",
+	"snow":"4in",
+	"windspeed":4,
+	"temp":"20 F"}, 
+	
+	{"name":"Stowe Mountain" , 
+	"state":"NH",
+	"snow":"4in",
+	"windspeed":5,
+	"temp":"20 F"}, 
+	
+	{"name":"Sugarloaf" , 
+	"state":"NH",
+	"snow":"4in",
+	"windspeed":4,
+	"temp":"20 F"}, 
+	
+	{"name":"Blue Hills" , 
+	"state":"NH",
+	"snow":"4in",
+	"windspeed":4,
+	"temp":"20 F"}, 
+	
+	
+]
+}
+
+var data={"users":[
+        {
+            "firstName":"Ray",
+            "lastName":"Villalobos",
+            "joined": {
+                "month":"January",
+                "day":12,
+                "year":2012
+            }
+        },
+        {
+            "firstName":"John",
+            "lastName":"Jones",
+            "joined": {
+                "month":"April",
+                "day":28,
+                "year":2010
+            }
+        }
+]}

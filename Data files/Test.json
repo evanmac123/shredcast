@@ -1,0 +1,11 @@
+// JavaScript Document
+
+var JSONObject = {
+"name":"Loon Mountian",
+"state":"NH",
+"snow-in":"4in", 
+
+
+
+}
+
