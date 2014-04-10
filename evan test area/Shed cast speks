@@ -1,0 +1,36 @@
+Shed cast speks
+
+
+Things we need
+
+Input form 
+	Includes drop down state bar
+	This will display mountains in that state
+	
+	Checks various conditions
+	
+	snow-fall last 48 hours
+	average base depth
+	Snow type
+
+	base temp
+	summit temp
+
+	windspeed
+
+	parks open
+	Pipes open
+
+	acres open
+	miles open
+	trails open
+
+	snow last 24 hours:
+	snowmaking?
+	Grooming? 
+
+	
+	submit data
+
+	run data
+    
