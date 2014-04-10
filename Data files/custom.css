@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Custom Styling for the Body */
+body{
+	background-color:rgba(203,203,203,1.00);
+	
+}
+
+
+/*Custom Styling for the Sidebar navigation*/
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+  margin: 50px 0 0 0;
+}
+
+#sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background-color: #222;
+  border-color: #080808;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background-color: #222;
+  border-color: #080808;
+}
+
+@media (max-width:767px) {
+
+    #wrapper {
+      padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+      left: 0;
+    }
+
+    #wrapper.active {
+      position: relative;
+      left: 250px;
+    }
+
+    #wrapper.active #sidebar-wrapper {
+      left: 250px;
+      width: 250px;
+      transition: all 0.4s ease 0s;
+    }
+
+}
+
+/* Custom Syling for Grid Components */
+
+.portfolio-image{
+	padding: 10px;
+	background-color:rgba(158,143,116,1.00);
+	height: 500px;
+
+}
+
+.image-test{
+	height: 500px;
+	width: 500px;
+	background-color:rgba(80,185,223,1.00);
+
+	display:block;
+}
+
+.textblock-test{
+	height: 500px;
+	width: 300px;
+	background-color:rgba(161,249,139,1.00);
+	padding: 50px;
+	display:block;
+}

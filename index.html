@@ -1,11 +1,248 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ShredCast</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>ShredCast</title>
+	<link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./css/custom.css" rel="stylesheet" type="text/css">
+
+    <!-- JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./page_files/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./page_files/bootstrap.min.js"></script>
+    <script>
+
+    	$(document).ready(function(){
+            $.get('./xml/nav.xml', function(links){
+                $(links).find('nav_item').each(function(){
+
+                    var $nav_item = $(this);
+                    var title = $nav_item.find('title').text();
+                    var url = $nav_item.find('url').text();
+
+                    var nav_list = document.createElement('li');
+                    
+
+                    var nav_link = document.createElement('a');
+                    $(nav_link).addClass('active');
+                    $(nav_link).attr("href", url);
+                    $(nav_link).text(title);
+                    $(nav_list).append($(nav_link));
+
+                    $("ul.nav.navbar-nav").append(nav_list);
+
+
+
+                });
+
+            }).fail(function(){alert("Yo");});
+        
+             $.get('./json/shredcast.json', function(getter){
+
+                        $(getter).find('mountain').each(function(){
+
+                        	//Main Mountain Information
+                            var $mountain = $(this);
+                            var name = $mountain.find('name').text();
+                            var imageurl = $mountain.find('url').text();
+                            var state = $mountain.find('state');
+                            var city = $mountain.find('city');
+                            var ShredCastScore = $mountain.find('score');
+
+                            // Conditions
+                            var temperature += $mountain.find('temperature').append("Temperature:");
+                            var base = $mountain.find('base');
+                            var windSpeed = $mountain.find('windSpeed');
+
+
+
+
+
+                            var mountain_panel = document.createElement('div');
+                            $(mountain_panel).addClass('container');
+                            $(mountain_panel).addClass('mountain_panel');
+
+
+                           		 // Row for Mountain name and City, State
+                            	var name_row = document.createElement('div');
+                            	$(name_row).addClass('row');
+                            	$(name_row).append('mountain_panel')
+
+                            		var name_col = document.createElement('div');
+                            		$(name_col).addClass('col-md-6');
+                            		$(name_col).append('name_row')
+
+                            			var name_text = document.createElement('h1');
+                            			$(name_text).text(title);
+                            			$(name_text).append(name_col);
+
+                            		var cityState = document.createElement('div');
+                            		$(cityState).addClass('col-md-6');
+                            		$(cityState).append(name_row);
+
+                            			var cityState_text = document.createElement('h1');
+                            			$(cityState_text).append(cityState);
+
+                            	// Rankings row		
+                            	var rankings_row = document.createElement('div');
+                            	$(rankings_row).addClass('row');
+                            	$(rankings_row).append(mountain_panel);
+
+
+                            		// Score Container
+                            		var score_container = document.createElement('div');
+                            		$(score_container).addClass('score-container');
+                            		$(score_container).addClass('col-lg-2');
+                            		$(score_container).addClass('col-sm-3');
+                            		$(score_container).append('rankings_row');
+
+                            			// SCORE
+                            			var score_text = document.createElement('h1');
+                            			$(score_text).addClass('score')
+                            			$(score_text).addClass('clear-margins')
+                            			$(score_text).addClass('nokern')
+                            			$(score_text).addClass('centered')
+                            			$(score_text).text(ShredCastScore);
+                            			$(score_text).append('score_container');
+
+
+                            		// Conditions Container
+                            		var conditions_container = document.createElement('div');
+                            		$(score_container).addClass('col-sm-9');
+                            		$(score_container).append('rankings_row');
+
+                            			// 1st coloumn in the rankings row
+                            			var conditions_col1 = document.createElement('div');
+                            			$(conditions_col1).addClass('col-sm-6');
+                            			$(conditions_col1).addClass('conditions-panel');
+                            			$(conditions_col1).append("conditions_container");
+                            				
+                            				// Conditions of list 1
+                            				var condtions_list1 = document.createElement('ul');
+                            				$(condtions_list1).addClass('ul-margin');
+                            				$(condtions_list1).append('conditions_col1');
+
+
+                            					// TEMPERATURE
+                            					var list_temperature = document.createElement('li');
+                            					$(list_temperature).append('condtions_list1');
+                            					$(list_temperature).text(temperature);
+
+                            					// BASE INCHES
+                            					var list_base = document.createElement('li');
+                            					$(list_base).append('condtions_list1');
+                            					$(list_base).text(base); 
+
+                            					// WIND SPEED
+                            					var list_windSpeed = document.createElement('li');
+                            					$(list_windSpeed).append('condtions_list1'); 
+                            					$(list_windSpeed).text(windSpeed);
+
+
+                            			// 2nd coloumn in the rankings row	
+                            			var conditions_col2 = document.createElement('div');
+                            			$(conditions_col2).addClass('col-sm-6');
+                            			$(conditions_col2).addClass('conditions-panel');
+                            			$(conditions_col2).append("conditions_container");
+
+                            				//Conditions of List 2
+                            				var condtions_list2 = document.createElement('ul');
+                            				$(condtions_list2).addClass('ul-margin');
+                            				$(condtions_list2).append('conditions_col2');
+
+                            					// SOMETHING
+                            					var list_temperature = document.createElement('li');
+                            					$(list_temperature).append('condtions_list2');
+                            					$(list_temperature).text(temperature);
+
+                            					// SOMETHING
+                            					var list_base = document.createElement('li');
+                            					$(list_base).append('condtions_list2');
+                            					$(list_base).text(base); 
+
+                            					// SOMETHING
+                            					var list_windSpeed = document.createElement('li');
+                            					$(list_windSpeed).append('condtions_list2'); 
+                            					$(list_windSpeed).text(windSpeed);
+
+
+                            $('body').append($(mountain_panel);
+
+                        });
+
+                    });
+
+        }); 
+        </script> 
+
+
+
+
+
+
 </head>
 
 <body>
+	<img src="background.jpg" id="full-screen-background-image" />
+
+
+	<div class="container">
+		<div class="centered">
+			<a class="btn btn-default btn-lg center" href="#">Mountains</a>
+			<a class="btn btn-default btn-lg center" href="#">Conditions</a>
+			<a class="btn btn-default btn-lg center" href="#">Rankings</a>
+		</div>
+	</div>
+
+
+
+	<div class="container mountain_panel">
+		<div class="row">
+			<div class="col-md-6">
+				<h1> Loon Mountain</h1>
+			</div>
+			<div class="col-md-6">
+				<h1>Lincoln, NH</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-lg-2 score-container">
+				<div class="">
+					<h1 class="score clear-margins nokern centered"> 80 </h1>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="col-sm-6 conditions-panel">
+					<ul class="ul-margin">
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+					</ul>
+				</div>
+				<div class="col-sm-6 conditions-panel">
+					<ul class="ul-margin">
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 </body>
 </html>
+
