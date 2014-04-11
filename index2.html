@@ -37,17 +37,51 @@
 			<a class="btn btn-default btn-lg center" href="#">Rankings</a>
 		</div>
 	</div>
+
+<script>
+
+$(document).ready(function(){
+
+    var mountain_select = document.createElement('div');
+
+
+
+
+});
+
+</script>
+
+
+
+
+
 <script>
 
         $(document).ready(function(){
 
                 $(mount.mountain).each(function() {
                     var name = this.name;
-                    var temperature = this.temp;
+                    var temperature =  this.temp;
                     var cityState = this.state;
                     var windSpeed = this.windspeed;
                     var base = this.snow;
                     var ShredCastScore = 80;
+
+                    // String Variables
+                    var temp_string = "Temperature:     ";
+                    var wind_string = "Wind Speed:     ";
+                    var base_string = "Base:     ";
+
+
+
+
+                    // String + Condition
+                    var temp_text = temp_string + temperature;
+                    var wind_text = wind_string + windSpeed;
+                    var base_text = base_string + base;
+
+
+
                 //  var output = "<div class='holder'> <div class='description'> <div class='name'>"  + name + " </div><br><div class='state'>"+ state + " </div><br><div class='windspeed'>"+ windspeed + " </div><br><div class='temp'>"+ temp + " </div><br><div class='snow'>"+ snow +  "</div></div></div>" + "<br>" ;
                     //"<ul><li>" + this.firstName + " " + this.lastName + "--" + this.joined.month+"</li></ul>";
  
@@ -122,17 +156,17 @@
                                                 // TEMPERATURE
                                                 var list_temperature = document.createElement('li');
                                                 $(condtions_list1).append(list_temperature);
-                                                $(list_temperature).append(temperature);
+                                                $(list_temperature).append(temp_text);
 
                                                 // BASE INCHES
                                                 var list_base = document.createElement('li');
                                                 $(condtions_list1).append(list_base);
-                                                $(list_base).append(base); 
+                                                $(list_base).append(base_text); 
 
                                                 // WIND SPEED
                                                 var list_windSpeed = document.createElement('li');
                                                 $(condtions_list1).append(list_windSpeed); 
-                                                $(list_windSpeed).append(windSpeed);
+                                                $(list_windSpeed).append(wind_text);
 
                                                 // 2nd coloumn in the rankings row  
                                         var conditions_col2 = document.createElement('div');
@@ -148,24 +182,22 @@
                                                 // SOMETHING
                                                 var list_temperature = document.createElement('li');
                                                 $(condtions_list2).append(list_temperature);
-                                                $(list_temperature).append(temperature);
+                                                $(list_temperature).append(temp_text);
 
                                                 // SOMETHING
                                                 var list_base = document.createElement('li');
                                                 $(condtions_list2).append(list_base);
-                                                $(list_base).append(base); 
+                                                $(list_base).append(base_text); 
 
                                                 // SOMETHING
                                                 var list_windSpeed = document.createElement('li');
                                                 $(condtions_list2).append(list_windSpeed); 
-                                                $(list_windSpeed).append(windSpeed);
+                                                $(list_windSpeed).append(wind_text);
 
 
+                                                ('body').append(mountain_panel);
 
-
-
-
-$('body').append(mountain_panel);
+                            
                          
 
                         });

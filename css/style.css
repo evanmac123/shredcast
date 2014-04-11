@@ -86,3 +86,59 @@ li{
   margin-bottom: 11pt;
 }
 
+
+
+
+
+
+
+/* Mountain Menu Styling */
+
+
+
+.menu_div ul
+{
+    padding:0px;
+    margin:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    list-style:none;
+    text-indent:15px;
+    overflow-x: hidden;
+}
+.menu_div ul li
+{
+    background:#FFFFFF;
+    line-height:28px;
+    border-bottom:1px solid #999999;
+    padding:0px;
+    margin:0px;
+
+}
+.menu_div ul li a
+{
+    text-decoration:none;
+    color:#FFF;
+    display:block;
+    padding:0px;
+    margin:0px;
+    color: #000;
+    border-bottom:1px solid #999999;
+
+}
+.menu_div ul li a:hover
+{
+    background:#2DAAE1;
+
+}
+.menu_div ul li#active
+{
+    background:#FFF;
+    font-size: 20px;
+
+}
+
+#add-margin{
+  margin-right: 10px ;
+}
+
