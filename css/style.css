@@ -1,7 +1,16 @@
 @charset "utf-8";
 /* CSS Document */
 
+.holder{
 
+
+margin-top:10px;
+
+}
+
+.hidden{
+  display:none;
+}
 
 .box{
   background-color: #FFF;
@@ -45,6 +54,10 @@
 
 .mountain-panel{
   margin: 12pt;
+  border-radius: 8px;
+
+background-color: #E8E8E8;
+
 }
 
 .nokern{

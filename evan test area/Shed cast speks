@@ -34,3 +34,20 @@ Input form
 
 	run data
     
+
+     var list_temperature = document.createElement('li');
+                                                $(condtions_list1).append(list_temperature);           
+                                                $(list_temperature).append(temperature);
+                                                $(list_temperature).addClass('temp');
+
+                                                // BASE INCHES
+                                                var list_base = document.createElement('li');
+                                                $(condtions_list1).append(list_base);
+                                                $(list_base).append(base); 
+                                                $(list_base).addClass('base');
+
+                                                // WIND SPEED
+                                                var list_windSpeed = document.createElement('li');
+                                                $(condtions_list1).append(list_windSpeed); 
+                                                $(list_windSpeed).append(windSpeed);
+                                                $(list_windSpeed).addClass("windSpeed");
