@@ -26,7 +26,7 @@ var mount= {"mountain":[
 	{"name":"Blue Hills" , 
 	"state":"NH",
 	"snow":"4in",
-	"windspeed":4,
+	"windspeed":"4 mph",
 	"temp":"20 F"}, 
 
 	{"name":"Sunday River" , 
@@ -38,7 +38,7 @@ var mount= {"mountain":[
 ]
 }
 
-var data={"users":[
+var states={"state_name":[
         {
             "firstName":"Ray",
             "lastName":"Villalobos",
