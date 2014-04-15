@@ -36,7 +36,7 @@ var mount= {"mountain":[
 	"temp":"20 F"}, 
 
 	{"name":"Sunday River" , 
-	"state":"ME",
+	"state":"NH",
 	"snow":9,
 	"windspeed":4,
 	"temp":20}, 
@@ -44,23 +44,10 @@ var mount= {"mountain":[
 ]
 }
 
-var data={"users":[
-        {
-            "firstName":"Ray",
-            "lastName":"Villalobos",
-            "joined": {
-                "month":"January",
-                "day":12,
-                "year":2012
-            }
-        },
-        {
-            "firstName":"John",
-            "lastName":"Jones",
-            "joined": {
-                "month":"April",
-                "day":28,
-                "year":2010
-            }
-        }
-]}
+var states = {"statenames":[
+{"state_name":"NH", },
+{"state_name":"ME", },
+{"state_name":"VT", },
+{"state_name":"MA", },
+
+]}   

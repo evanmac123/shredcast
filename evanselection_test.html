@@ -53,32 +53,15 @@ $(document).ready(function () {
 		</div>
 	</div>
 
+<div class="placeholder"></div>
+
 <script>
 
         $(document).ready(function(){
 
-                $(mount.mountain).each(function() {
-                    var name = this.name;
-                    var temperature =  this.temp;
-                    var cityState = this.state;
-                    var windSpeed = this.windspeed;
-                    var base = this.snow;
-                    var ShredCastScore = 80;
+           
 
-                    // String Variables
-                    var temp_string = "Temperature:     ";
-                    var wind_string = "Wind Speed:     ";
-                    var base_string = "Base:     ";
-
-                    
-
-                    // String + Condition
-                    var temp_text = temp_string + temperature;
-                    var wind_text = wind_string + windSpeed;
-                    var base_text = base_string + base;
-});
-
-            $("body").append(mountain_selection_panel)
+            
                     var mountain_selection_panel = document.createElement('div');
                     $(mountain_selection_panel).addClass('container');
                     $(mountain_selection_panel).addClass('mountain_selection');
@@ -91,32 +74,79 @@ $(document).ready(function () {
                             $(mountain_selection_panel_col1).addClass('col-md-4');
                             $(mountain_selection_panel_row).append(mountain_selection_panel_col1);
 
-                            var choose_mnt = document.createElement('h2').addClass('bold');
+                            var choose_mnt = document.createElement('h2');
                             $(mountain_selection_panel_col1).append(choose_mnt);
 
-                            var mnt_menu =  document.createElement('div').addClass('menu_div');
+                            var mnt_menu = document.createElement('div');
                             $(mountain_selection_panel_col1).append(mnt_menu);
+                            $(mnt_menu).addClass('menu_div');
 
-                            var mnt_menu_active = document.createElement('ul').attr("id", "active");
+                            var mnt_menu_active = document.createElement('ul');
+                            $(mnt_menu_active).attr("id", "active");
                             $(mnt_menu).append(mnt_menu_active);
+
+                            $(".placeholder").append(mountain_selection_panel);
 
 
                             // FUNCTION THAT CREATES STATE LIST
                             $(states.statenames).each(function() {
 
-                            var state_name = this.name;
+                            var state_name = this.state_name;
                                 // 
-                            var mnt_menu_stateList = document.createElement('li').attr("id", "active");
-                            var mnt_menu_state_name = document.createElement('a').attr("href", "#");
+                            var mnt_menu_stateList = document.createElement('li');
+                            $(mnt_menu_stateList).attr("id", "active");
+
+                            var mnt_menu_state_name = document.createElement('a');
+                            $(mnt_menu_state_name).attr("href", "#");
+
                             $(mnt_menu_stateList).append(mnt_menu_state_name);
-                            $(mnt_menu_state_name).append(cityState);
+                            $(mnt_menu_state_name).append(state_name);
+
                                                                                             // state = name from json file
-                            var mnt_list_container = document.createElement('ul').attr("id", state_name);
+                            var mnt_list_container = document.createElement('ul');
+                            $(mnt_list_container).attr("id", state_name);
                             $(mnt_menu_stateList).append(mnt_list_container);
+                            $(mnt_list_container).attr("style", "display:none;");
+
+                              $(mnt_menu_active).append(mnt_menu_stateList);
 
 
-                             
                               });
+
+
+                             $(mount.mountain).each(function() {
+                    var name = this.name;
+                    var temperature =  this.temp;
+                    var cityState = this.state;
+                    var windSpeed = this.windspeed;
+                    var base = this.snow;
+                    var ShredCastScore = 80;
+
+                    // String Variables
+                    var temp_string = "Temperature:     ";
+                    var wind_string = "Wind Speed:     ";
+                    var base_string = "Base:     ";
+                    var sign = "#";
+                    var statehash = sign + cityState;
+
+                   
+
+                    // String + Condition
+                    var temp_text = temp_string + temperature;
+                    var wind_text = wind_string + windSpeed;
+                    var base_text = base_string + base;
+
+                    var mountain_li = document.createElement("li")
+                    $(statehash).append(mountain_li);
+
+                    var mountain_a  = document.createElement("a")
+                    $(mountain_li).append(mountain_a);
+                    $(mountain_a).append(name);
+                    $(mountain_a).attr("href", "#");
+
+
+
+});
 
                                // FUNCTION THAT CREATES LIST OF MOUNTAINS AND ATTACHES THEM TO mnt_list_container
                               //  $(mount.mountain).each(function(){
@@ -136,15 +166,16 @@ $(document).ready(function () {
 
 
 
-                         
+
 
                         });
 
+                        
                     
 
 </script>
 
-<!--
+
 <div class="container mountain_selection">
     <div class="row">
         <div class="col-md-4">  
@@ -196,7 +227,7 @@ $(document).ready(function () {
                                 </li>
                             </ul>
                         </div>
--->
+
 
         <div class="col-md-6">
 

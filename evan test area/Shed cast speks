@@ -51,3 +51,48 @@ Input form
                                                 $(condtions_list1).append(list_windSpeed); 
                                                 $(list_windSpeed).append(windSpeed);
                                                 $(list_windSpeed).addClass("windSpeed");
+
+
+
+                                                  $(mount.mountain).each(function() {
+                    var name = this.name;
+                    var temperature =  this.temp;
+                    var cityState = this.state;
+                    var windSpeed = this.windspeed;
+                    var base = this.snow;
+                    var ShredCastScore = 80;
+
+                    // String Variables
+                    var temp_string = "Temperature:     ";
+                    var wind_string = "Wind Speed:     ";
+                    var base_string = "Base:     ";
+
+                    
+
+                    // String + Condition
+                    var temp_text = temp_string + temperature;
+                    var wind_text = wind_string + windSpeed;
+                    var base_text = base_string + base;
+});
+
+
+     $(mount.mountain).each(function() {
+                    var name = this.name;
+                    var temperature =  this.temp;
+                    var cityState = this.state;
+                    var windSpeed = this.windspeed;
+                    var base = this.snow;
+                    var ShredCastScore = 80;
+
+                    // String Variables
+                    var temp_string = "Temperature:     ";
+                    var wind_string = "Wind Speed:     ";
+                    var base_string = "Base:     ";
+
+                    
+
+                    // String + Condition
+                    var temp_text = temp_string + temperature;
+                    var wind_text = wind_string + windSpeed;
+                    var base_text = base_string + base;
+});
