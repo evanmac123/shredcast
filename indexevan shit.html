@@ -65,14 +65,14 @@
                     var cityState = this.state;
                     var windSpeed = this.windspeed;
                     var base = this.snow;
-                    var ShredCastScore = temperature *  + windSpeed + base;
+                    var ShredCastScore = base + windSpeed;
                 //  var output = "<div class='holder'> <div class='description'> <div class='name'>"  + name + " </div><br><div class='state'>"+ state + " </div><br><div class='windspeed'>"+ windspeed + " </div><br><div class='temp'>"+ temp + " </div><br><div class='snow'>"+ snow +  "</div></div></div>" + "<br>" ;
                     //"<ul><li>" + this.firstName + " " + this.lastName + "--" + this.joined.month+"</li></ul>";
  
                             var mountain_panel = document.createElement('div');
                             $(mountain_panel).addClass('container');
                             $(mountain_panel).addClass('mountain_panel');
-                            $(mountain_panel).hide(); 
+                             $(mountain_panel).toggle;
 
                                  // Row for Mountain name and City, State
                                 var name_row = document.createElement('div');
@@ -193,7 +193,7 @@ $('.holder').append(mountain_panel);
 
                         });
 
-if(document.hasAttribute(".windspeed").text > 3){
+if((".mountain_panel").hasClass("windSpeed").text > 3){
 
 
 }

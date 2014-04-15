@@ -13,25 +13,25 @@
 var mount= {"mountain":[ 
 	{"name":"Loon Mountain" , 
 	"state":"NH",
-	"snow":"4in",
+	"snow":5,
 	"windspeed":4,
 	"temp":"20 F"}, 
 	
 	{"name":"Stowe Mountain" , 
 	"state":"NH",
-	"snow":"4in",
+	"snow":4,
 	"windspeed":5,
 	"temp":"20 F"}, 
 	
 	{"name":"Sugarloaf" , 
 	"state":"NH",
-	"snow":"4in",
+	"snow":3,
 	"windspeed":4,
 	"temp":"20 F"}, 
 	
 	{"name":"Blue Hills" , 
 	"state":"NH",
-	"snow":"4in",
+	"snow":9,
 	"windspeed":4,
 	"temp":"20 F"}, 
 

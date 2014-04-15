@@ -23,16 +23,7 @@
 <script>
 
 $(document).ready(function () {
-  $('#active li ul').hide();    
-  $('#active > li > a').click(function(){
-    if ($(this).attr('class') != 'active'){
-      $('#active li ul').slideUp();
-      $(this).next().slideToggle();
-      $('#active li a').removeClass('active');
-      $(this).addClass('active');
-    }
-  });
-});
+
 
 
 </script>
@@ -143,7 +134,16 @@ $(document).ready(function () {
                     $(mountain_li).append(mountain_a);
                     $(mountain_a).append(name);
                     $(mountain_a).attr("href", "#");
-
+  $('#active li ul').hide();    
+  $('#active > li > a').click(function(){
+    if ($(this).attr('class') != 'active'){
+      $('#active li ul').slideUp();
+      $(this).next().slideToggle();
+      $('#active li a').removeClass('active');
+      $(this).addClass('active');
+    }
+ 
+});
 
 
 });
