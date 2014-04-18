@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ShredCast</title>
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--script src="./page_files/jquery.min.js"></script>-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--script src="./page_files/bo_otstrap.min.js"></script>-->
+
+    <script src="Test.json"></script>
+
+</head>
+
+
+
+<body>
+    <img src="background.jpg" id="full-screen-background-image" />
+
+
+    <div class="container">
+        <div class="centered">
+            <a class="btn btn-default btn-lg center mountainnav" href="#">Mountains</a>
+            <a class="btn btn-default btn-lg center conditionsnav" href="#">Conditions</a>
+            <a class="btn btn-default btn-lg center rankingsnav" href="#">Rankings</a>
+        </div>
+    </div>
+
+
+
+<div class="mountain_page"></div>
+<div class="conditions_page">THis is a example</div>
+<div class="rankings_page"><button class="btn2"> this one </button> </div>
+
+
+<script>
+
+        $(document).ready(function(){
+
+///////////////////////////////////////// Main Navigation////////////////////////////////////////
+
+
+$(".mountainnav").click(function(){
+  $(".mountain_page").show("slide");
+  $(".conditions_page").hide("slide");
+  $(".rankings_page").hide("slide");
+});
+
+$(".conditionsnav").click(function(){
+  $(".mountain_page").hide("slide");
+  $(".conditions_page").show("slide");
+  $(".rankings_page").hide("slide");
+});
+
+$(".rankingsnav").click(function(){
+  $(".mountain_page").hide("slide");
+  $(".conditions_page").hide("slide");
+  $(".rankings_page").show("slide");
+});
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////// End of Main Navigation////////////////////////////////////////
+
+
+
+///////////////////////////////////////// Mountain page////////////////////////////////////////
+
+
+
+
+
+
+                //initial set up area
+                    var mountain_selection_panel = document.createElement('div');
+                    $(mountain_selection_panel).addClass('container');
+                    $(mountain_selection_panel).addClass('mountain_selection');
+                    $(".mountain_page").append(mountain_selection_panel);
+
+                        var mountain_selection_panel_row = document.createElement('div');
+                        $(mountain_selection_panel_row).addClass('row');
+                        $(mountain_selection_panel).append(mountain_selection_panel_row);
+                            //Where one picks their mountains
+                            var mountain_selection_panel_col1 = document.createElement('div');
+                            $(mountain_selection_panel_col1).addClass('col-md-6');
+                            $(mountain_selection_panel_row).append(mountain_selection_panel_col1);
+                           
+                            //Where selected mountains show up
+                            var mountain_picked = document.createElement('ul');
+                            $(mountain_picked).addClass('col-md-4');
+                            $(mountain_picked).addClass('nav');
+                            $(mountain_picked).addClass('nav-pills');
+                            $(mountain_picked).addClass('nav-stacked');
+                            $(mountain_selection_panel_row).append(mountain_picked);
+
+                            var choose_mnt = document.createElement('h2');
+                            $(mountain_selection_panel_col1).append(choose_mnt);
+
+                            var mnt_menu = document.createElement('div');
+                            $(mountain_selection_panel_col1).append(mnt_menu);
+                            $(mnt_menu).addClass('menu_div');
+
+                            var mnt_menu_active = document.createElement('ul');
+                            $(mnt_menu_active).attr("id", "active");
+                            $(mnt_menu).append(mnt_menu_active);
+
+                            
+
+
+                            // FUNCTION THAT CREATES STATE LIST
+                $(states.statenames).each(function() {
+
+                            var state_name = this.state_name;
+                                // 
+                            var mnt_menu_stateList = document.createElement('li');
+                            $(mnt_menu_stateList).attr("id", "active");
+
+                            var mnt_menu_state_name = document.createElement('a');
+                            $(mnt_menu_state_name).attr("href", "#");
+
+                            $(mnt_menu_stateList).append(mnt_menu_state_name);
+                            $(mnt_menu_state_name).append(state_name);
+
+                                                                                          // state = name from json file
+                            var mnt_list_container = document.createElement('ul');
+                            $(mnt_list_container).attr("id", state_name);
+                            $(mnt_menu_stateList).append(mnt_list_container);
+                            $(mnt_list_container).attr("style", "display:none;");
+
+                              $(mnt_menu_active).append(mnt_menu_stateList);
+
+
+
+                 });
+                            //End of State Each
+
+                $(mount.mountain).each(function() {
+                    var name = this.name;
+                    var temperature =  this.temp;
+                    var cityState = this.state;
+                    var windSpeed = this.windspeed;
+                    var base = this.snow;
+                    var ShredCastScore = 80;
+
+                    // String Variables
+                    var temp_string = "Temperature:     ";
+                    var wind_string = "Wind Speed:     ";
+                    var base_string = "Base:     ";
+                    var sign = "#";
+                    var statehash = sign + cityState;
+
+                   
+
+                    // String + Condition
+                    var temp_text = temp_string + temperature;
+                    var wind_text = wind_string + windSpeed;
+                    var base_text = base_string + base;
+
+                    var mountain_li = document.createElement("li")
+                    $(statehash).append(mountain_li);
+
+                    var mountain_a  = document.createElement("a")
+                    $(mountain_li).append(mountain_a);
+                    $(mountain_a).append(name);
+                    $(mountain_a).attr("href", "#");
+                    $(mountain_a).addClass("mount");
+                    //End of State Each
+
+                });
+
+
+ //Submit button
+    var submit = document.createElement("a");
+    $(submit).attr("href", "#");
+    $(mountain_selection_panel_row).append(submit);
+    $(submit).addClass('btn btn-default btn-lg center submitposition');
+    $(submit).append("Submit");
+    
+
+
+ //My attempt to remove the mountain once selected 
+ //this does not work due to mysteries doesn't recognize the selected mountains as anything
+ // can't get a fix on how to select them 
+     
+
+//Jquery to make slider work on Mountian page
+//every click function must be inide this one
+    $('#active li ul').hide();    
+   $('#active > li > a').click(function(){
+         if ($(this).attr('class') != 'active'){
+             $('#active li ul').slideUp();
+              $(this).next().slideToggle();
+              $('#active li a').removeClass('active');
+              $(this).addClass('active');
+       }
+
+ 
+
+
+
+    //adds mountain to right of selector
+    $("a.mount").on("click", function(e){
+         //Holder
+         var mountain_collect = document.createElement("li");
+         $(mountain_picked).append(mountain_collect);
+
+        //Names styled in CSS under list
+         var mountain_name = document.createElement("a");
+         $(mountain_name).attr("href", "#");
+         $(mountain_name).addClass('list');
+         $(mountain_name).append(e.target.text);
+         $(mountain_collect).append(mountain_name);
+
+       
+          // console.log(e);
+
+  //Removes clicked on mountains        
+  $("a.list").on("click", function(a){
+      
+      //Cool Version
+      // (a.target).toggle("drop");
+
+       //Real version
+      a.target.remove();
+   
+
+    });
+
+  
+
+     
+
+
+    //Submit array
+    //Moves all of the selected mountains into a array 
+  $("a.submitposition").on("click", function(submit){
+         var selectedmountains = document.getElementsByClassName('list'); 
+         var arraymountains = jQuery.makeArray(selectedmountains); 
+        // console.log(arraymountains);
+         $(".mountain_page").hide('slide');
+         $(".conditions_page").show('slide');
+
+       //$("body").append(arraymountains);
+    });
+
+
+});//End of slider                                
+
+
+
+///////////////////////////////////////// End of Mountian page////////////////////////////////////////
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////// Conditions page////////////////////////////////////////
+
+
+ var conditionsexample = document.createElement('div');
+  $(".conditions_page").append(conditionsexample);
+   $(conditionsexample).append("THIS IS AN EXAMPLE");
+   $(".conditions_page").hide();
+
+
+   //Submit button
+    var submitconditions = document.createElement("a");
+    $(submitconditions).attr("href", "#");
+    $(".conditions_page").append(submitconditions);
+    $(submitconditions).addClass('btn btn-default btn-lg center submitconditions');
+    $(submitconditions).append("Submit");
+
+      //Submit Conditions
+    
+ $(".submitconditions").click(function(){
+         
+        $(".conditions_page").hide('slide');
+         $(".rankings_page").show('slide');
+
+
+
+    });
+///////////////////////////////////////// END of Conditions page////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////// Rankings page////////////////////////////////////////
+
+
+
+   //General variables
+                var mountainlist = new Array( Loon, "Sunday River" );
+                var something = mountainlist.forEach;
+                var Loon = "Loon Mountain";
+                var i;
+
+
+
+                $(mount.mountain).each(function() {
+                    //Specific mountain variables
+                    var name = this.name;
+                    var temperature = this.temp;
+                    var cityState = this.state;
+                    var windSpeed = this.windspeed;
+                    var base = this.snow;
+                    var ShredCastScore = base + windSpeed;
+              
+ 
+                            var mountain_panel = document.createElement('div');
+                            $(mountain_panel).addClass('container');
+                            $(mountain_panel).addClass('mountain_panel');
+                           
+
+                                 // Row for Mountain name and City, State
+                                var name_row = document.createElement('div');
+                                $(name_row).addClass('row');
+                                $(mountain_panel).append(name_row); 
+
+                                var name_col = document.createElement('div');
+                                 $(name_col).addClass('col-md-6');
+                                 $(name_row).append(name_col);
+
+                                 var name_text = document.createElement('h1');
+                                        $(name_text).append(name);
+                                        $(name_col).append(name_text);
+
+                                var cityStateplace = document.createElement('div');
+                                    $(cityStateplace).addClass('col-md-6');
+                                    $(name_row).append(cityStateplace);
+
+                               var cityState_text = document.createElement('h1');
+                                $(cityStateplace).append(cityState_text);
+                                $(cityState_text).append(cityState);
+
+
+                                // Rankings row     
+                                var rankings_row = document.createElement('div');
+                                $(rankings_row).addClass('row');
+                                $(mountain_panel).append(rankings_row);
+
+                                  // Score Container
+                                    var score_container = document.createElement('div');
+                                    $(score_container).addClass('score-container');
+                                    $(score_container).addClass('col-lg-2');
+                                    $(score_container).addClass('col-sm-3');
+                                    $(rankings_row).append(score_container);
+
+                                // SCORE
+                                        var score_text = document.createElement('h1');
+                                        $(score_text).addClass('score')
+                                        $(score_text).addClass('clear-margins')
+                                        $(score_text).addClass('nokern')
+                                        $(score_text).addClass('centered')
+                                        $(score_text).append(ShredCastScore);
+                                        $(score_container).append(score_text);
+
+                             
+
+                                    // Conditions Container
+                                    var conditions_container = document.createElement('div');
+                                    $(conditions_container).addClass('col-sm-9');
+                                    $(rankings_row).append(conditions_container);
+
+                                    // 1st coloumn in the rankings row
+                                        var conditions_col1 = document.createElement('div');
+                                        $(conditions_col1).addClass('col-sm-6');
+                                        $(conditions_col1).addClass('conditions-panel');
+                                        $(conditions_container).append(conditions_col1);
+                                            
+                                            // Conditions of list 1
+                                            var condtions_list1 = document.createElement('ul');
+                                            $(condtions_list1).addClass('ul-margin');
+                                            $(conditions_col1).append(condtions_list1);
+
+
+                                                // TEMPERATURE
+                                               var list_temperature = document.createElement('li');
+                                                $(condtions_list1).append(list_temperature);           
+                                                $(list_temperature).append(temperature);
+                                                $(list_temperature).addClass('temp');
+
+                                                // BASE INCHES
+                                                var list_base = document.createElement('li');
+                                                $(condtions_list1).append(list_base);
+                                                $(list_base).append(base); 
+                                                $(list_base).addClass('base');
+
+                                                // WIND SPEED
+                                                var list_windSpeed = document.createElement('li');
+                                                $(condtions_list1).append(list_windSpeed); 
+                                                $(list_windSpeed).append(windSpeed);
+                                                $(list_windSpeed).addClass("windSpeed");
+                                                // 2nd coloumn in the rankings row  
+                                        var conditions_col2 = document.createElement('div');
+                                        $(conditions_col2).addClass('col-sm-6');
+                                        $(conditions_col2).addClass('conditions-panel');
+                                        $(conditions_container).append(conditions_col2);
+
+                                            //Conditions of List 2
+                                            var condtions_list2 = document.createElement('ul');
+                                            $(condtions_list2).addClass('ul-margin');
+                                            $(conditions_col2).append(condtions_list2);
+
+                                                // SOMETHING
+                                                var list_temperature = document.createElement('li');
+                                                $(condtions_list2).append(list_temperature);
+                                                $(list_temperature).append(temperature);
+
+                                                // SOMETHING
+                                                var list_base = document.createElement('li');
+                                                $(condtions_list2).append(list_base);
+                                                $(list_base).append(base); 
+
+                                                // SOMETHING
+                                                var list_windSpeed = document.createElement('li');
+                                                $(condtions_list2).append(list_windSpeed); 
+                                                $(list_windSpeed).append(windSpeed);
+
+
+
+
+
+
+
+
+$('.rankings_page').append(mountain_panel);
+$('.rankings_page').hide();
+   //end of each variables                     
+
+
+
+                        });
+
+//(".mountain_panel").hasClass("windSpeed").text > 3){
+
+
+//}
+
+
+
+
+
+
+
+
+
+$(".btn2").click(function(){
+
+
+//$(mountainlist).each(function() {
+$("h1:contains(Loon)").parent().parent().parent().toggle("slide");
+
+//
+//$("h1:contains(Loon)").parent().parent().parent().toggle();
+
+
+
+//$("li:contains('9')").parent().parent().parent().parent().parent().toggle();
+
+});
+
+   
+
+
+
+///////////////////////////////////////// End of Ranking page////////////////////////////////////////
+
+
+});
+ 
+
+//END OF DOC READY 
+});
+
+                        
+                    
+
+</script>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
+

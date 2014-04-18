@@ -36,7 +36,9 @@
 
 
 
-<div class="placeholder"></div>
+<div class="mountain_page"></div>
+<div class="conditions"></div>
+<div class="rankings_page"</div>
 
 <script>
 
@@ -49,7 +51,7 @@
                     var mountain_selection_panel = document.createElement('div');
                     $(mountain_selection_panel).addClass('container');
                     $(mountain_selection_panel).addClass('mountain_selection');
-                    $(".placeholder").append(mountain_selection_panel);
+                    $(".mountain_page").append(mountain_selection_panel);
 
                         var mountain_selection_panel_row = document.createElement('div');
                         $(mountain_selection_panel_row).addClass('row');
@@ -190,8 +192,12 @@
 
   //Removes clicked on mountains        
   $("a.list").on("click", function(a){
-         
-         a.target.remove();
+      
+      //Cool Version
+      // (a.target).toggle("drop");
+
+       //Real version
+      a.target.remove();
     });
 
   
@@ -205,6 +211,7 @@
          var selectedmountains = document.getElementsByClassName('list'); 
          var arraymountains = jQuery.makeArray(selectedmountains); 
          console.log(arraymountains);
+         $(".mountain_page").toggle("drop");
 
        //$("body").append(arraymountains);
     });
