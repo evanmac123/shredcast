@@ -37,55 +37,59 @@
 			<a class="btn btn-default btn-lg center" href="#">Rankings</a>
 		</div>
 	</div>
-    <button class="btn2"> this one </button> 
-     <div class="container">
-     <div class="holder">
-    
+
+<script>
+
+$(document).ready(function(){
+
+    var mountain_select = document.createElement('div');
 
 
-     </div>
-     </div>
+
+
+});
+
+</script>
+
+
+
+
 
 <script>
 
         $(document).ready(function(){
 
-
-
-
-
-
-
-
-
-
-///////////////////////////////////////////BEGIN OF THIRD PAGE/////////////////////////////////////////////
-   
-
-                 
-                //General variables
-                var mountainlist = new Array( Loon, "Sunday River" );
-                var something = mountainlist.forEach;
-                var Loon = "Loon Mountain";
-                var i;
-
-
-
                 $(mount.mountain).each(function() {
-                    //Specific mountain variables
                     var name = this.name;
-                    var temperature = this.temp;
+                    var temperature =  this.temp;
                     var cityState = this.state;
                     var windSpeed = this.windspeed;
                     var base = this.snow;
-                    var ShredCastScore = base + windSpeed;
+                    var ShredCastScore = 80;
+
+                    // String Variables
+                    var temp_string = "Temperature:     ";
+                    var wind_string = "Wind Speed:     ";
+                    var base_string = "Base:     ";
+
+
+
+
+                    // String + Condition
+                    var temp_text = temp_string + temperature;
+                    var wind_text = wind_string + windSpeed;
+                    var base_text = base_string + base;
+
+
+
                 //  var output = "<div class='holder'> <div class='description'> <div class='name'>"  + name + " </div><br><div class='state'>"+ state + " </div><br><div class='windspeed'>"+ windspeed + " </div><br><div class='temp'>"+ temp + " </div><br><div class='snow'>"+ snow +  "</div></div></div>" + "<br>" ;
                     //"<ul><li>" + this.firstName + " " + this.lastName + "--" + this.joined.month+"</li></ul>";
  
+
                             var mountain_panel = document.createElement('div');
                             $(mountain_panel).addClass('container');
                             $(mountain_panel).addClass('mountain_panel');
-                            $(mountain_panel).hide();
+
 
                                  // Row for Mountain name and City, State
                                 var name_row = document.createElement('div');
@@ -150,22 +154,20 @@
 
 
                                                 // TEMPERATURE
-                                               var list_temperature = document.createElement('li');
-                                                $(condtions_list1).append(list_temperature);           
-                                                $(list_temperature).append(temperature);
-                                                $(list_temperature).addClass('temp');
+                                                var list_temperature = document.createElement('li');
+                                                $(condtions_list1).append(list_temperature);
+                                                $(list_temperature).append(temp_text);
 
                                                 // BASE INCHES
                                                 var list_base = document.createElement('li');
                                                 $(condtions_list1).append(list_base);
-                                                $(list_base).append(base); 
-                                                $(list_base).addClass('base');
+                                                $(list_base).append(base_text); 
 
                                                 // WIND SPEED
                                                 var list_windSpeed = document.createElement('li');
                                                 $(condtions_list1).append(list_windSpeed); 
-                                                $(list_windSpeed).append(windSpeed);
-                                                $(list_windSpeed).addClass("windSpeed");
+                                                $(list_windSpeed).append(wind_text);
+
                                                 // 2nd coloumn in the rankings row  
                                         var conditions_col2 = document.createElement('div');
                                         $(conditions_col2).addClass('col-sm-6');
@@ -180,64 +182,66 @@
                                                 // SOMETHING
                                                 var list_temperature = document.createElement('li');
                                                 $(condtions_list2).append(list_temperature);
-                                                $(list_temperature).append(temperature);
+                                                $(list_temperature).append(temp_text);
 
                                                 // SOMETHING
                                                 var list_base = document.createElement('li');
                                                 $(condtions_list2).append(list_base);
-                                                $(list_base).append(base); 
+                                                $(list_base).append(base_text); 
 
                                                 // SOMETHING
                                                 var list_windSpeed = document.createElement('li');
                                                 $(condtions_list2).append(list_windSpeed); 
-                                                $(list_windSpeed).append(windSpeed);
+                                                $(list_windSpeed).append(wind_text);
 
 
+                                                ('body').append(mountain_panel);
 
-
-
-
-
-
-$('.holder').append(mountain_panel);
-   //end of each variables                     
-
-
+                            
+                         
 
                         });
 
-//(".mountain_panel").hasClass("windSpeed").text > 3){
-
-
-//}
-
-
-
-
-
-
-
-
-
-$(".btn2").click(function(){
-
-
-//$(mountainlist).each(function() {
-$("h1:contains(Loon)").parent().parent().parent().toggle("slide");
-
-//
-//$("h1:contains(Loon)").parent().parent().parent().toggle();
-
-
-
-//$("li:contains('9')").parent().parent().parent().parent().parent().toggle();
-
-});
-//$("li:contains('9')").parent().parent().parent().parent().parent().hide();
-
                     });
-
         </script> 
+
+
+
+<!--	<div class="container mountain_panel">
+		<div class="row">
+			<div class="col-md-6">
+				<h1> Loon Mountain</h1>
+			</div>
+			<div class="col-md-6">
+				<h1>Lincoln, NH</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-lg-2 score-container">
+				<div class="">
+					<h1 class="score clear-margins nokern centered"> 80 </h1>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="col-sm-6 conditions-panel">
+					<ul class="ul-margin">
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+					</ul>
+				</div>
+				<div class="col-sm-6 conditions-panel">
+					<ul class="ul-margin">
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+						<li>Temperature: 50</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>-->
 
 
 
