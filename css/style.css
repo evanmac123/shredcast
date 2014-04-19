@@ -142,6 +142,7 @@ li{
 .menu_div ul li a:hover
 {
     background:#2DAAE1;
+    color: #FFFFFF !important;
 
 }
 .menu_div ul li#active
@@ -155,8 +156,7 @@ li{
   margin-right: 10px ;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 .close {
   font-size: 20px;
@@ -176,12 +176,11 @@ li{
   cursor: pointer;
 }
 
-=======
-=======
->>>>>>> FETCH_HEAD
+
 .list{
-  background-color:#0066CC ;
-  border-radius: 4px;
+/*  background-color:#0066CC ;
+  border-radius: 4px; */
+  background-color: #2DAAE1;
   color:white;
 
 
@@ -192,9 +191,3 @@ li{
   margin-left:750px;
 
 
-<<<<<<< HEAD
-}
->>>>>>> FETCH_HEAD
-=======
-}
->>>>>>> FETCH_HEAD

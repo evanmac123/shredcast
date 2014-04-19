@@ -216,6 +216,8 @@ $(".rankingsnav").click(function(){
     //adds mountain to right of selector
     $("a.mount").on("click", function(e){
          //Holder
+
+
          var mountain_collect = document.createElement("li");
          $(mountain_picked).append(mountain_collect);
 
@@ -225,7 +227,6 @@ $(".rankingsnav").click(function(){
          $(mountain_name).addClass('list');
          $(mountain_name).append(e.target.text);
          $(mountain_collect).append(mountain_name);
-
        
           // console.log(e);
 
@@ -282,10 +283,28 @@ $(".rankingsnav").click(function(){
 ///////////////////////////////////////// Conditions page////////////////////////////////////////
 
 
- var conditionsexample = document.createElement('div');
-  $(".conditions_page").append(conditionsexample);
-   $(conditionsexample).append("THIS IS AN EXAMPLE");
+ var exampleslider = document.createElement('div').attr("id", "slider");
+  $(".conditions_page").append(exampleslider);
+   $(exampleslider).attr("THIS IS AN EXAMPLE");
    $(".conditions_page").hide();
+
+
+  $(function() {
+    $( "#slider" ).slider({
+      value:5,
+      min: 0,
+      max: 5,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.value );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
+  });
+
+
+
+
 
 
    //Submit button
@@ -296,14 +315,10 @@ $(".rankingsnav").click(function(){
     $(submitconditions).append("Submit");
 
       //Submit Conditions
-    
  $(".submitconditions").click(function(){
          
         $(".conditions_page").hide('slide');
          $(".rankings_page").show('slide');
-
-
-
     });
 ///////////////////////////////////////// END of Conditions page////////////////////////////////////////
 
