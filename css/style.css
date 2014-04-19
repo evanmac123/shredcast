@@ -156,6 +156,7 @@ li{
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 .close {
   font-size: 20px;
@@ -176,6 +177,8 @@ li{
 }
 
 =======
+=======
+>>>>>>> FETCH_HEAD
 .list{
   background-color:#0066CC ;
   border-radius: 4px;
@@ -189,5 +192,9 @@ li{
   margin-left:750px;
 
 
+<<<<<<< HEAD
+}
+>>>>>>> FETCH_HEAD
+=======
 }
 >>>>>>> FETCH_HEAD

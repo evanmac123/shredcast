@@ -19,6 +19,10 @@
     <script src="Test.json"></script>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+</head>
+>>>>>>> FETCH_HEAD
 =======
 </head>
 >>>>>>> FETCH_HEAD
@@ -49,7 +53,13 @@
 
            
 <<<<<<< HEAD
+<<<<<<< HEAD
             
+=======
+
+
+                //initial set up area
+>>>>>>> FETCH_HEAD
 =======
 
 
@@ -147,6 +157,7 @@
                     $(mountain_a).append(name);
                     $(mountain_a).attr("href", "#");
 <<<<<<< HEAD
+<<<<<<< HEAD
                 });
 =======
                     $(mountain_a).addClass("mount");
@@ -181,9 +192,15 @@
        }
 
  
+=======
+                    $(mountain_a).addClass("mount");
+                    //End of State Each
+>>>>>>> FETCH_HEAD
+
+                });
 
 
-
+<<<<<<< HEAD
     //adds mountain to right of selector
     $("a.mount").on("click", function(e){
          //Holder
@@ -242,9 +259,91 @@
 
 });//End of slider
 
+=======
+ //Submit button
+    var submit = document.createElement("a");
+    $(submit).attr("href", "#");
+    $(mountain_selection_panel_row).append(submit);
+    $(submit).addClass('btn btn-default btn-lg center submitposition');
+    $(submit).append("Submit");
+    
+
+
+ //My attempt to remove the mountain once selected 
+ //this does not work due to mysteries doesn't recognize the selected mountains as anything
+ // can't get a fix on how to select them 
+     
+
+//Jquery to make slider work on Mountian page
+//every click function must be inide this one
+    $('#active li ul').hide();    
+   $('#active > li > a').click(function(){
+         if ($(this).attr('class') != 'active'){
+             $('#active li ul').slideUp();
+              $(this).next().slideToggle();
+              $('#active li a').removeClass('active');
+              $(this).addClass('active');
+       }
+
+ 
 
 
 
+    //adds mountain to right of selector
+    $("a.mount").on("click", function(e){
+         //Holder
+         var mountain_collect = document.createElement("li");
+         $(mountain_picked).append(mountain_collect);
+
+        //Names styled in CSS under list
+         var mountain_name = document.createElement("a");
+         $(mountain_name).attr("href", "#");
+         $(mountain_name).addClass('list');
+         $(mountain_name).append(e.target.text);
+         $(mountain_collect).append(mountain_name);
+
+       
+          // console.log(e);
+
+  //Removes clicked on mountains        
+  $("a.list").on("click", function(a){
+      
+      //Cool Version
+      // (a.target).toggle("drop");
+
+       //Real version
+      a.target.remove();
+    });
+>>>>>>> FETCH_HEAD
+
+  
+
+     });
+
+
+    //Submit array
+    //Moves all of the selected mountains into a array 
+  $("a.submitposition").on("click", function(submit){
+         var selectedmountains = document.getElementsByClassName('list'); 
+         var arraymountains = jQuery.makeArray(selectedmountains); 
+         console.log(arraymountains);
+         $(".mountain_page").toggle("drop");
+
+<<<<<<< HEAD
+   
+=======
+       //$("body").append(arraymountains);
+    });
+>>>>>>> FETCH_HEAD
+
+
+});//End of slider
+
+
+
+
+<<<<<<< HEAD
+=======
 
 
    
@@ -254,6 +353,7 @@
 
 
 
+>>>>>>> FETCH_HEAD
    
 
 
@@ -265,6 +365,9 @@
  
 
 //END OF DOC READY 
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 });
 
